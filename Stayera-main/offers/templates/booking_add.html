@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-wrapper">
+    <div class="container">
+        <h2>Add New Booking</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #aeaeae, #e4daee);
+    margin: 0;
+    padding: 0;
+}
+
+.form-wrapper {
+    min-height: calc(100vh - 60px); /* Adjust height based on navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    color: gold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(232, 223, 223, 0.2);
+    color: black;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.text-danger {
+    font-size: 13px;
+    color: gold;
+    margin-top: 4px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #ffd700, #edd33e);
+    color: #333;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #e5990d, gold);
+    transform: scale(1.02);
+}
+</style>
+{% endblock %}

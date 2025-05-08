@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Edit Profile - Hotel Booking{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #aeaeae, #e4daee);
+        margin: 0;
+        padding: 0;
+    }
+
+    input ,textarea{
+        padding: 9px 4px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .form-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px 30px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: gold;
+    }
+
+    .form-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        text-align: center;
+        color: black;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: black;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .form-control,
+    .form-select {
+        width: 100%;
+        padding: 12px 14px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        background: rgba(232, 223, 223, 0.2);
+        color: black;
+        transition: box-shadow 0.3s, background-color 0.3s;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-primary {
+        background: linear-gradient(to right, #ffd700, #edd33e);
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 20px;
+        width: 100%;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(to right, #e5990d, gold);
+        transform: scale(1.02);
+    }
+
+    .btn-secondary {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #333;
+        font-weight: bold;
+        border: 1px solid #ddd;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+    }
+
+    .form-actions {
+        margin-top: 30px;
+    }
+
+    .alert {
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: 500;
+    }
+
+    .alert-success {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: green;
+    }
+
+    .alert-error,
+    .alert-danger {
+        background-color: rgba(220, 53, 69, 0.2);
+        color: red;
+    }
+
+    .form-control,
+.form-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    color: black;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+                inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid gold;
+    box-shadow: 0 0 10px gold, 
+                inset 2px 2px 8px rgba(255, 255, 255, 0.2),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2 class="form-title">Edit Profile</h2>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <h3>Personal Information</h3>
+        
+        <div class="form-group">
+            <label class="form-label">First Name</label>
+            {{ user_form.first_name }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Last Name</label>
+            {{ user_form.last_name }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Email</label>
+            {{ user_form.email }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Birthday</label>
+            {{ profile_form.birthday }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Gender</label>
+            {{ profile_form.gender }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Marital Status</label>
+            {{ profile_form.marital_status }}
+        </div>
+        
+        <h3>Contact Information</h3>
+        
+        <div class="form-group">
+            <label class="form-label">Address</label>
+            {{ profile_form.address }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Pincode</label>
+            {{ profile_form.pincode }}
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">State</label>
+            {{ profile_form.state }}
+        </div>
+        
+        <div class="form-actions">
+            <a href="{% url 'offers:profile' %}" class="btn-secondary">Cancel</a>
+            <button type="submit" class="btn-primary">Save Changes</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

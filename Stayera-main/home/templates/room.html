@@ -1,0 +1,225 @@
+{%extends "base.html"%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/room.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <!-- Filters Section -->
+        <aside class="filters">
+            <h2>Filter & Sort</h2>
+        
+            <!-- Popular Filters -->
+            <h3>Popular filters</h3>
+            <label><input type="checkbox"> Mumbai (BOM-Chhatrapati Shivaji Intl.)</label>
+            <label><input type="checkbox" checked> Ocean view</label>
+            <label><input type="checkbox"> Breakfast included</label>
+            <label><input type="checkbox"> Aparthotel</label>
+            <label><input type="checkbox"> Hotel</label>
+        
+            <!-- Price Range -->
+            <h3>Price per night</h3>
+            <div class="price-inputs">
+                <input type="text" value="₹0" id="minPrice">
+                <input type="text" value="₹28,000+" id="maxPrice">
+            </div>
+            <input type="range" min="0" max="28000" value="28000" class="price-slider">
+        
+            <!-- Stay Options -->
+            <h3>Stay options</h3>
+            <label><input type="radio" name="stay" checked> Any</label>
+            <label><input type="radio" name="stay"> Hotels</label>
+            <label><input type="radio" name="stay"> Homes</label>
+
+                <!-- Popular Filters -->
+                <h3>Popular filters</h3>
+                <label><input type="checkbox"> Hotels <span class="count">682</span></label>
+                <label><input type="checkbox"> Breakfast included <span class="count">437</span></label>
+                <label><input type="checkbox"> Free cancellation <span class="count">897</span></label>
+                <label><input type="checkbox"> Very good: 8+ <span class="count">196</span></label>
+                <label><input type="checkbox"> Parking <span class="count">563</span></label>
+                <label><input type="checkbox"> Private bathroom <span class="count">810</span></label>
+                <label><input type="checkbox"> Swimming Pool <span class="count">64</span></label>
+                <label><input type="checkbox"> Pets allowed <span class="count">90</span></label>
+            
+                <!-- Facilities -->
+                <h3>Facilities</h3>
+                <label><input type="checkbox"> Parking <span class="count">563</span></label>
+                <label><input type="checkbox"> Restaurant <span class="count">215</span></label>
+                <label><input type="checkbox"> Pets allowed <span class="count">90</span></label>
+                <label><input type="checkbox"> Room service <span class="count">711</span></label>
+                <label><input type="checkbox"> 24-hour front desk <span class="count">741</span></label>
+                <a href="#" class="show-more">Show all 14 ▼</a>
+            
+                <!-- Property Type -->
+                <h3>Property type</h3>
+                <label><input type="checkbox"> Hotels <span class="count">682</span></label>
+                <label><input type="checkbox"> Entire homes & apartments <span class="count">182</span></label>
+                <label><input type="checkbox"> Apartments <span class="count">167</span></label>
+                <label><input type="checkbox"> Hostels <span class="count">86</span></label>
+            
+            
+        </aside>
+        
+
+        <!-- Hotel Listings -->
+        <main class="hotel-listings">
+            <h2>Available Properties</h2>
+            
+            <!-- Hotel 1: Trident -->
+            <div class="hotel-card">
+                <div class="hotel-image-container">
+                    <button class="carousel-btn prev">❮</button>
+                    <img src="{% static 'images/room.jpg' %}" alt="Trident Nariman Point Mumbai" class="hotel-image">
+                    <button class="carousel-btn next">❯</button>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                
+                <div class="hotel-info">
+                    <div class="hotel-details">
+                        <h3>Trident, Nariman Point Mumbai</h3>
+                        <p class="location">Mumbai</p>
+                        <div class="amenities">
+                            <span class="amenity"><img src="{% static 'images/poo.jpeg' %}" alt="Pool"> Pool</span>
+                        </div>
+                        
+                        <div class="rating-container">
+                            <span class="rating-badge">9.2</span>
+                            <div class="rating-text">
+                                <strong>Wonderful</strong>
+                                <p>999 reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <div class="price">
+                            <strong>₹20,107</strong>
+                            <p class="total-price">₹32,170 total</p>
+                            <p class="tax-note">includes taxes & fees</p>
+                        </div>
+                        <a href="{% url 'booking' %}"><button class="sign-in-btn">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hotel 2: Havelock Inn Resort -->
+            <div class="hotel-card">
+                <div class="hotel-image-container">
+                    <button class="carousel-btn prev">❮</button>
+                    <img src="{% static 'images/hotel4.jpg' %}" alt="Havelock Inn Resort" class="hotel-image">
+                    <button class="carousel-btn next">❯</button>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                
+                <div class="hotel-info">
+                    <div class="hotel-details">
+                        <h3>Havelock Inn Resort</h3>
+                        <p class="location">Goral</p>
+                        <div class="amenities">
+                            <span class="amenity"><img src="{% static 'images/hotel2.jpg' %}" alt="Pool"> Pool</span>
+                        </div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <div class="price">
+                            <strong>₹3,857</strong>
+                            <p class="total-price">₹91,840 total</p>
+                            <p class="tax-note">includes taxes & fees</p>
+                        </div>
+                        <a href="{% url 'booking' %}"><button class="sign-in-btn">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <div class="hotel-image-container">
+                    <button class="carousel-btn prev">❮</button>
+                    <img src="{% static 'images/room.jpg' %}" alt="Trident Nariman Point Mumbai" class="hotel-image">
+                    <button class="carousel-btn next">❯</button>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                
+                <div class="hotel-info">
+                    <div class="hotel-details">
+                        <h3>Trident, Nariman Point Mumbai</h3>
+                        <p class="location">Mumbai</p>
+                        <div class="amenities">
+                            <span class="amenity"><img src="{% static 'images/poo.jpeg' %}" alt="Pool"> Pool</span>
+                        </div>
+                        
+                        <div class="rating-container">
+                            <span class="rating-badge">9.2</span>
+                            <div class="rating-text">
+                                <strong>Wonderful</strong>
+                                <p>999 reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <div class="price">
+                            <strong>₹20,107</strong>
+                            <p class="total-price">₹32,170 total</p>
+                            <p class="tax-note">includes taxes & fees</p>
+                        </div>
+                        <a href="{% url 'booking' %}"><button class="sign-in-btn">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hotel-card">
+                <div class="hotel-image-container">
+                    <button class="carousel-btn prev">❮</button>
+                    <img src="{% static 'images/varanasi.jpg' %}" alt="Novotel Mumbai Juhu Beach Hotel" class="hotel-image">
+                    <button class="carousel-btn next">❯</button>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                
+                <div class="hotel-info">
+                    <div class="hotel-details">
+                        <h3>Novotel Mumbai Juhu Beach Hotel</h3>
+                        <p class="location">Mumbai</p>
+                        <div class="amenities">
+                            <span class="amenity"><img src="{% static 'images/rooms.jpeg' %}" alt="Pool"> Pool</span>
+                        </div>
+                        <p class="reserve-note">Reserve now, pay later</p>
+                        
+                        <div class="rating-container">
+                            <span class="rating-badge">7.0</span>
+                            <div class="rating-text">
+                                <strong>Good</strong>
+                                <p>867 reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <div class="price">
+                            <strong>₹19,193</strong>
+                            <p class="total-price">₹317,064 total</p>
+                            <p class="tax-note">includes taxes & fees</p>
+                        </div>
+                        <a href="{% url 'booking' %}"><button class="sign-in-btn">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+
+
+
+    {%endblock%}
+    
+</body>
+</html>

@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f8ff, #fff0f5);
+      padding: 60px 20px;
+      color: #333;
+    }
+
+    .box {
+      background: white;
+      padding: 40px 35px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #27ae60;
+      margin-bottom: 10px;
+    }
+
+    .emoji {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .message {
+      font-size: 18px;
+      margin: 20px 0;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .summary {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .summary h3 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+      font-size: 20px;
+    }
+
+    .summary p {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="emoji">🎉</div>
+    <h1>Your Booking is Confirmed!</h1>
+
+    <div class="message">
+      <p>Dear <strong>{{ first_name }} {{ last_name }}</strong>,</p>
+      <p>Thank you for choosing <strong>Hotel Lotus Inn</strong>. We are thrilled to host you and make your stay exceptional. Your comfort is our top priority, and our team is ready to welcome you with warmth and care.</p>
+    </div>
+
+    <div class="summary">
+      <h3>📄 Booking Summary</h3>
+      <p><span class="highlight">Email:</span> {{ email }}</p>
+      <p><span class="highlight">Phone:</span> {{ phone }}</p>
+      <p><span class="highlight">Check-in:</span> Tue, 22 Apr 2025</p>
+      <p><span class="highlight">Check-out:</span> Wed, 23 Apr 2025</p>
+      <p><span class="highlight">Room:</span> Deluxe AC – 2 Adults</p>
+      <p><span class="highlight">Total:</span> ₹1,923 (incl. taxes & fees)</p>
+    </div>
+
+    <div class="message">
+      <p>✨ Feel free to reach out to our support team anytime. We wish you a peaceful, luxurious stay. See you soon!</p>
+    </div>
+
+    <a class="back-button" href="{% url 'offers:offer_list' %}">⬅ Back to Home</a>
+  </div>
+</body>
+</html>

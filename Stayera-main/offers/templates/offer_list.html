@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Offers list | Shop Travel{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/offer_list.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Enhanced 3D banner with images -->
+<div class="top-banner">
+    <img src="{% static '/images/resort2.jpeg' %}" alt="The Peak Hong Kong">
+    <img src="{% static '/images/varanasi.jpg' %}" alt="The Peak Hong Kong">
+    <img src="{% static '/images/resort3.jpeg' %}" alt="The Peak Hong Kong">
+</div>
+
+<div class="container">
+    <div class="title">The Peak 太平山顶</div>
+    <div class="rating-bar">
+        <span>8.8</span>
+        <span><i class="fas fa-star stars"></i> 4.6/5 (17.6k reviews)</span>
+        <span style="color: green;"><i class="fas fa-check-circle"></i> based on 38.3k reviews</span>
+    </div>
+
+    <div class="meta-info">
+        <div><strong>🏆 Rank:</strong> #1 of 2025 Asia 100 – Best Things to Do</div>
+        <div><strong>📍 Address:</strong> The Peak, Hong Kong</div>
+        <div><strong>🕒 Recommended Time:</strong> 1–2 hours</div>
+        <div><strong>🎟️ Entry:</strong> Free</div>
+        <div><strong>📞 Phone:</strong> +852-28406888</div>
+    </div>
+
+    <div class="book-now bookNow">
+        <button class="Bookedd">Book Now</button>
+    </div>
+
+    <!-- Review section now positioned to the right -->
+    <div class="review-section">
+        <div class="review-title">Visitor Reviews</div>
+        <div class="review">
+            <div class="user"><i class="fas fa-user-circle"></i> Old 9</div>
+            <div class="stars">⭐⭐⭐⭐⭐ Outstanding</div>
+            <div class="text">
+                This is the highest peak in Hong Kong and you can see the panoramic view of the city.
+                This cable car looks very interesting, and the wax statues in the Madame Tussauds Museum
+                are also very vivid. The only downside is the weather — there's no view when it's foggy.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <h2>Attraction Tickets</h2>
+    <div class="filters">
+        <button>Tomorrow</button>
+        <button>April 14</button>
+        <button>Select Date</button>
+    </div>
+    <div class="promo">
+        <span>Promotions</span>
+        <button class="redeem">Up to ₹240 Redeem</button>
+    </div>
+</div>
+
+<div class="ticket-box">
+    <h2>Standard Cabin</h2>
+    <p class="intro">Click to view the standard carriage introduction <a href="#">Details <i class="fas fa-chevron-right"></i></a></p>
+    <p class="note">Booked by 42.2% of travellers | 58K+ Booked</p>
+
+    {% for offer in offers %}
+    <div class="card">
+        <div class="image-container">
+            {% if offer.image_url %}
+            <img src="{{ offer.image_url }}" alt="{{ offer.title }}" class="room-image">
+            {% else %}
+            <img src="{% static 'images/room.jpg' %}" alt="Default room image" class="room-image">
+            {% endif %}
+        </div>
+        <div class="offer-content">
+            <div class="details">
+                <h3>{{ offer.title }}</h3>
+                <p class="info">📅 Book now for tomorrow</p>
+                <p class="info">🗓 {{ offer.validity }}</p>
+                <p class="info">↩️ Conditional cancellation</p>
+                <p class="info">🎟 Ticket redemption not required</p>
+                <p class="booked">{{ offer.booked_count }} Booked</p>
+            </div>
+            <a class="price">
+                {% if offer.old_price %}
+                <span class="old-price">₹{{ offer.old_price }}</span>
+                {% endif %}
+                <span class="new-price">₹{{ offer.price }}</span>
+                {% if offer.savings %}
+                <span class="savings">Save ₹{{ offer.savings }}</span>
+                {% endif %}
+                <a href="{% url 'offers:booking_page' %}"><button class="book-btn">Book Now</button></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="{% static 'css/activity.css' %}">
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'booking' %}" class="back-button">← Modify your booking</a>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="details-card">
+                <div class="details-header">
+                    <h2><span class="circle-number">1</span> Your details</h2>
+                    <a href="{% url 'booking' %}" class="modify-button">Modify</a>
+                </div>
+                <div class="user-details">
+                    <p id="user-info">
+                        Natansh Mahajan |  mahajannatansh@gmail.com | 7973420969
+                    </p>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <h2>Choose payment method</h2>
+                <p style="margin: 10px 0;">🛡️ 100% safe and secure payments</p>
+
+                <div class="payment-option" id="pay-hotel">
+                    <h3>Pay At Hotel</h3>
+                </div>
+
+                <div class="payment-option" id="payNow">Pay Now</div>
+
+                <a href="{% url 'upi' %}">
+                    <button class="book">Pay with UPI</button>
+                </a>
+                <a href="{% url 'payment' %}">
+                    <button class="book">Pay with Card</button>
+                </a>
+
+                <div id="payment-details" style="display: none;">
+                    <p>UPI ID: <strong id="upi-id"></strong></p>
+                    <img id="qr-code" src="" alt="QR Code" width="150">
+                </div>
+            </div>
+        </main>
+
+        <aside class="hotel-card">
+            <h2>{{ booking.hotel_name|default:"Hotel Name" }}</h2>
+            <p>{{ booking.address|default:"Hotel Address" }}</p>
+            <div class="rating">{{ booking.rating|default:"⭐️⭐️⭐️⭐️" }}</div>
+            <p>Trident Nariman Point Mumbai</p>
+
+            <div class="price-breakdown">
+                {% for key, value in booking.price_breakdown_readable.items %}
+                    <div class="price-row">
+                        <span>{{ key }}</span>
+                        <span>₹{{ value }}</span>
+                    </div>
+                {% empty %}
+                    <div class="price-row">
+                        <span>Total</span>
+                        <span>₹20107</span>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="social-proof">
+                ⚡ 6 people booked this hotel in the last 6 hours
+            </div>
+        </aside>
+    </div>
+
+    <script src="{% static 'js/activity.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}Home - Shop Travel{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+
+{% block content %}.
+
+<section class="hero">
+  <div class="hero-overlay">
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title">Find Your Home Away From Home.</h1>
+    <p class="hero-subtitle">Introducing Stayera: A New Vision of Hospitality.</p>
+    <a href="{% url 'form' %}" class="cta-button">Discover More</a>
+  </div>
+</section>
+
+<div class="services-container">
+  <div class="service-cardss">
+    <img src="{% static 'images/service.png' %}" alt="Full Service Icon">
+    <h3>Full Service</h3>
+    <p class="service-text">You can count on us for all your accommodation, dining, and travel needs to create the best experience.</p>
+  </div>
+  <div class="service-cardss">
+    <img src="{% static 'images/Deliver.png' %}" alt="Deliver Value Icon">
+    <h3>Deliver Value</h3>
+    <p class="service-text">We deliver exceptional value by offering top-notch services at competitive prices.</p>
+  </div>
+  <div class="service-cardss">
+    <img src="{% static 'images/service.png' %}" alt="Partners Icon">
+    <h3>Partners</h3>
+    <p class="service-text">Through partnerships with top brands, we ensure excellent services and unforgettable experiences.</p>
+  </div>
+  <div class="service-cardss">
+    <img src="{% static 'images/Integrity.png' %}" alt="Integrity Icon">
+    <h3>Integrity</h3>
+    <p class="service-text">Our commitment to honesty, transparency, and professionalism ensures your satisfaction.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="text-section">
+    <h3>WELCOME</h3>
+    <h1><b>StayEra</b></h1>
+    <p>Experience comfort and luxury like never before. At Stayera, we offer world-class accommodations, top-notch hospitality, and seamless booking experiences. Whether you're traveling for business or leisure, we ensure a stay that's both relaxing and memorable.</p>
+    <p>Book your stay today and enjoy premium services, breathtaking views, and personalized comfort tailored to your needs. Your perfect getaway starts here!</p>
+    <p>Discover elegance. Experience Stayera.</p>
+    <button><a href="{% url 'about' %}">ABOUT US</a></button>
+  </div>
+  <div class="image-section">
+    <img src="{% static 'images/hotel4.jpg' %}" alt="Hotel Image">
+  </div>
+</div>
+<section class="about">
+  <div class="experience">
+    <h2>7+</h2>
+    <p>Years <br> experience <br> working</p>
+  </div>
+  <div class="content">
+    <h1>Why Choose Us</h1>
+  </div>
+  <div class="content1">
+    <p>
+      At StayEra, we’re committed to making your stay unforgettable. With 7+ years of experience in the hospitality space, 
+      we provide curated stays, reliable support, and exclusive deals to make your hotel booking seamless, affordable, and stress-free.
+    </p>
+    <button class="read-more"><a href="{% url 'form' %}">Know More</a></button>
+  </div>
+</section>
+
+
+<div class="services-container">
+  <h1 class="services-title">SERVICES</h1>
+  <div class="services-grid">
+    
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-bed"></i>
+      </div>
+      <h1 class="service-title">Comfortable Rooms</h1>
+      <p class="service-description">Relax in our premium, cozy rooms designed for maximum comfort and peace.Step into a haven of tranquility, where soft textures and warm lighting create a space to unwind and recharge and enjoy the peace</p>
+      <a href="#" class="know-more-btn">Know More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-concierge-bell"></i>
+      </div>
+      <h2 class="service-title">24/7 Support</h2>
+      <p class="service-description">Our team is always here to help you out, any time of day or night.24/7 customer support means os around the clock, 24 hours a day, 7 days a week, ensuring help is available whenever they need it. </p>
+      <a href="#" class="know-more-btn">Know More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h2 class="service-title">Secure Booking</h2>
+      <p class="service-description">Your safety is our priority — book with full confidence and security. Enjoy a worry-free booking experience with our secure and encrypted platform.
+        We use protect your personal information.
+        
+        </p>
+      <a href="#" class="know-more-btn">Know More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-tag"></i>
+      </div>
+      <h2 class="service-title">Best Price Deals</h2>
+      <p class="service-description">Get exclusive offers and unbeatable prices on every booking. Don't miss out! Discover incredible deals on hotels today.
+        Get the most for your money! Discover our best value hotel options.      </p>
+      <a href="#" class="know-more-btn">Know More</a>
+    </div>
+
+  </div>
+</div>
+
+
+   <!-- Footer -->
+<footer style="background-color: #1c1c1c; padding: 40px 20px; color: white;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; max-width: 1200px; margin: auto;">
+      
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Support</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Coronavirus (COVID-19) FAQs</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Manage your trips</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Contact Customer Service</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Safety Resource Center</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Discover</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Genius loyalty program</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Seasonal and holiday deals</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Travel articles</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Booking.com for Business</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Terms and settings</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Privacy & cookies</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Terms & conditions</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Grievance officer</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Modern Slavery Statement</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Partners</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Login</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Partner help</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">List your property</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Become an affiliate</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">About</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">About StayEra.com</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">How We Work</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Sustainability</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Careers</a></p>
+      </div>
+  
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; color: gray;">
+      <p>© 2025 StayEra.com™. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+{% endblock %}
+</body>
+</html>

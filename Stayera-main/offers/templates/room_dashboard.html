@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Dashboard</title>
+    <style>
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 200px;
+            margin-right: 20px;
+            text-align: center;
+        }
+        .blue { background-color: #007bff; }
+        .green { background-color: #28a745; }
+        .yellow { background-color: #ffc107; color: black; }
+        .red { background-color: #dc3545; }
+        .container { display: flex; gap: 20px; padding: 40px; }
+    </style>
+</head>
+<body>
+    <h1 style="padding-left: 40px;">Room Dashboard</h1>
+    <div class="container">
+        <div class="card blue">
+            <h3>Total Rooms</h3>
+            <p>{{ total_rooms }}</p>
+        </div>
+        <div class="card green">
+            <h3>Occupied Rooms</h3>
+            <p>{{ occupied_rooms }}</p>
+        </div>
+        <div class="card yellow">
+            <h3>Available Rooms</h3>
+            <p>{{ available_rooms }}</p>
+        </div>
+        <div class="card red">
+            <h3>Occupancy Rate</h3>
+            <p>{{ occupancy_rate }}%</p>
+        </div>
+    </div>
+</body>
+</html>

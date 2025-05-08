@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Offers | Shop Travel{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/offers.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align:center; margin-top: 50px;">🔥 Hot Offers Just for You 🔥</h1>
+    <p style="text-align:center;">Check out our exclusive travel deals!</p>
+
+    <section class="offers-container">
+        <h2 class="offers-heading">Offers <span class="highlight">ON 1st BOOKING</span></h2>
+        <div class="offers-scroll-wrapper">
+            {% for img in images %}
+            <div class="offer-card">
+                <img src="{% static img %}" alt="Offer {{ forloop.counter }}">
+                <div class="offer-details">
+                    <h2 class="discount">Grab Up to 15% OFF*</h2>
+                    <p class="desc">on Flights, Hotels, Cabs, Trains & more.</p>
+                    <p class="code">Code: WELCOMESTAYERA</p>
+                    <a href="{% url 'offers:welcome' %}" class="book-link">BOOK NOW</a>
+                </div>
+            </div>
+            {% endfor %}
+            
+            
+    <div class="offer-card">
+    <img src="{% static 'images/offer2.webp' %}" alt="Offer 3">
+    <div class="offer-details">
+        <h2 class="discount">Grab Up to 30% OFF*</h2>
+        <p class="desc">on Flights, Hotels, Cabs, Trains & more.</p>
+        <p class="code">Code: WELCOMESTAYERA</p>
+        <a href="{% url 'offers:welcome' %}" class="book-link">BOOK NOW</a>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    
+
+    <section class="contact-support-box">
+    <div class="contact-left">
+        <h2>Contact Our Travel Support Team ✈️</h2>
+        <p>Planning a trip? We’re here to help you with bookings, cancellations, and more.</p>
+        <form>
+            <div class="phone-input">
+                <span>+91</span>
+                <input type="tel" placeholder="Enter Mobile number" required>
+                <button type="submit">GET SUPPORT</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="contact-right">
+        <p>Scan the QR to chat with us:</p>
+        <img src="{% static 'images/frame.png' %}" alt="Contact QR" class="qr-code" />
+    </div>
+</section>
+
+{% load static %}
+
+<div class="container">
+    <div class="destination-section">
+        <h1 class="section-heading">Unlock Lesser-Known Wonders of India</h1>
+        
+        <div class="slider-controls">
+            <button class="slider-control prev" id="prevBtn">&lt;</button>
+            <button class="slider-control next" id="nextBtn">&gt;</button>
+        </div>
+        
+        <div class="slider-container">
+            <div class="destinations-slider" id="destinationsSlider">
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="{% static 'images/chennnai.jpg' %}" alt="Majuli Island, Assam">
+                        <div class="destination-overlay">
+                            <h3 class="destination-title">Stays in & around delhi for a weekend gateway</h3>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <a href="{% url 'offers:stays' %}">
+                    <div class="destination-card">
+                        <div class="destination-image">
+                            <img src="{% static 'images/chandigarh.jpg' %}" alt="Kalpetta, Kerala">
+                            <div class="destination-overlay">
+                                <h3 class="destination-title">Stays in & around Bangalore for a weekend gateway</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="{% static 'images/hyderabad.jpg' %}" alt="Kanatal, Uttarakhand">
+                        <div class="destination-overlay">
+                            <h3 class="destination-title">Hill Stations</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="{% static 'images/majaouli.jpeg' %}" alt="Gokarna, Karnataka">
+                        <div class="destination-overlay">
+                            <h3 class="destination-title">Sunsets </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="{% static 'images/varanasi.jpg' %}" alt="Chopta, Uttarakhand">
+                        <div class="destination-overlay">
+                            <h3 class="destination-title">Chopta, Uttarakhand</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer style="background-color: #1c1c1c; padding: 40px 20px; color: white;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; max-width: 1200px; margin: auto;">
+      
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Support</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Coronavirus (COVID-19) FAQs</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Manage your trips</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Contact Customer Service</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Safety Resource Center</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Discover</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Genius loyalty program</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Seasonal and holiday deals</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Travel articles</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Booking.com for Business</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Terms and settings</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Privacy & cookies</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Terms & conditions</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Grievance officer</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Modern Slavery Statement</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Partners</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Login</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Partner help</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">List your property</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Become an affiliate</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">About</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">About StayEra.com</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">How We Work</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Sustainability</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Careers</a></p>
+      </div>
+  
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; color: gray;">
+      <p>© 2025 StayEra.com™. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+
+{% endblock %}

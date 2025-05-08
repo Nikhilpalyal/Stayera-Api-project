@@ -1,0 +1,8 @@
+<h2>Delete Offer</h2>
+<p>Are you sure you want to delete "{{ offer.title }}"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+    <a href="{% url 'dashboard_offers' %}">Cancel</a>
+</form>

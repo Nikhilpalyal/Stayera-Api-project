@@ -1,0 +1,257 @@
+/* stays.css */
+
+/* Hero section styling */
+.hero {
+    background-color: #444;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.breadcrumb {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: gold;
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+    max-width: 1000px;
+}
+
+.city-select {
+    font-size: 16px;
+    color: white;
+}
+
+.select-city {
+    color: gold;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container-2{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 34px;
+}
+
+  .container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background-color: #333;
+    width: 410px;
+    height: 470px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    margin: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card .number {
+    background-color: gold;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-right: 10px;
+  }
+  
+  .card .tags {
+    color: white;
+    font-size: 13px;
+    margin: 0 16px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    margin: 12px 16px;
+    line-height: 1.5;
+    color: white;
+  }
+  
+  h2{
+    color: gold;
+  }
+
+  .card button {
+    margin: 16px;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid gold;
+    border-radius: 6px;
+    color: gold;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .card button:hover {
+    background-color: gold;
+    color: #000;
+  }
+  
+  .state-carousel-wrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .state-carousel-heading {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .state-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+  }
+  
+  .state-card {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 220px;
+    border-radius: 12px;
+    background-color: #2c2c2c;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .state-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .state-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+  }
+  
+  .state-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 4px 7px;
+  }
+  
+  .state-name {
+    font-weight: 600;
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+  }
+  
+  .hover-faq-section {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 2rem;
+    margin-top: 20px;
+    border-radius: 1rem;
+    max-width: 1400px;
+    margin: auto;
+  }
+  
+  .hover-faq-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hover-faq-item {
+    border-bottom: 1px solid #444;
+    padding: 1rem 0;
+    position: relative;
+  }
+  
+  .hover-faq-question {
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .hover-faq-item:hover .hover-faq-question {
+    color: gold;
+  }
+
+  .explore-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #FFD700; /* golden yellow */
+    color: #FFD700;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    width: 100%; /* Makes it full width inside card */
+    box-sizing: border-box;
+  }
+  
+  .explore-btn:hover {
+    background-color: #FFD700;
+    color: #000; /* Black text on hover */
+  }
+  
+  
+  .hover-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    color: #ccc;
+  }
+  
+  .hover-faq-item:hover .hover-faq-answer {
+    max-height: 200px; /* adjust as needed */
+    opacity: 1;
+  }
+  

@@ -1,0 +1,66 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+}
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.progress-container {
+    margin-bottom: 20px;
+}
+.progress-bar-bg {
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+}
+.progress-bar {
+    height: 10px;
+    background-color: #28a745;
+    transition: width 0.3s ease-in-out;
+}
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.check-icon {
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    color: green;
+    display: none;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}

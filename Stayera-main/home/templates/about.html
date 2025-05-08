@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    </head>
+    <body>
+    <section class="zero">
+        <div class="zero-overlay"></div>
+        <div class="zero-content">
+            <h1 class="zero-title">Find Your Home Away From Home.</h1>
+            <p class="zero-subtitle">Introducing Stayera: A New Vision of Hospitality.</p>
+            <a href="#" class="cta-button">Discover More</a>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-badge">Our Features</div>
+        <h1 class="h1">Insurance Provide you a <br> <span class="highlight">Better Future</span></h1>
+
+        <div class="features-container">
+            <div class="feature-box">
+                <div class="feature-icon">&#128221;</div>
+                <h3>Trusted Company</h3>
+                <p> A trusted hotel booking system ensures that customers can confidently make reservations without worrying about fraud, inaccurate listings, or poor service quality.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">&#128181;</div>
+                <h3>Secure and easy booking</h3>
+                <p>Plans can change, and a flexible hotel booking system ensures that travelers have the freedom to modify their reservations without stress. Whether it's a last-minute change or an extended stay, flexibility is key to a smooth travel experience.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">&#127919;</div>
+                <h3>Always Plan Flexibly</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit libero facilisis etiam ridiculus. With a secure and easy booking system, travelers can confidently reserve their stay in just a few clicks.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">&#128222;</div>
+                <h3>24/7 Fast Support</h3>
+                <p>24/7 customer support is essential for ensuring a seamless experience for guests. Whether they need assistance with booking a room, modifying reservations, or resolving last-minute issues.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="team-header">
+            <p class="team-badge">Our Team</p>
+            <h2><span>Team</span> Members</h2>
+            <p class="team-description pp">
+                Meet our talented professionals who make everything possible.
+            </p>
+        </div>
+
+        <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <img src="{% static 'images/Natansh.jpg' %}" alt="Natansh Mahajan">
+                <div class="team-info">
+                    <h3>Natansh Mahajan</h3>
+                    <p>Team Member</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/natansh-mahajan-287b19316/"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <img src="{% static 'images/me.jpg' %}" alt="Nikhil Palyal">
+                <div class="team-info">
+                    <h3>Nikhil Palyal</h3>
+                    <p>TEAM MEMBER</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/nikhil-palyal-7413a7328/"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <img src="{% static 'images/Rudra.jpg' %}" alt="Rudra">
+                <div class="team-info">
+                    <h3>Rudra Arora</h3>
+                    <p>TEAM MEMBER</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <img src="{% static 'images/radhika.jpg' %}" alt="Radhika Sood">
+                <div class="team-info">
+                    <h3>Radhika Sood</h3>
+                    <p>TEAM MEMBER</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/radhika-sood-5bb82433b/"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+<footer style="background-color: #1c1c1c; padding: 40px 20px; color: white;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; max-width: 1200px; margin: auto;">
+      
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Support</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Coronavirus (COVID-19) FAQs</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Manage your trips</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Contact Customer Service</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Safety Resource Center</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Discover</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Genius loyalty program</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Seasonal and holiday deals</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Travel articles</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Booking.com for Business</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Terms and settings</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Privacy & cookies</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Terms & conditions</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Grievance officer</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Modern Slavery Statement</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Partners</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Login</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Partner help</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">List your property</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Become an affiliate</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">About</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">About StayEra.com</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">How We Work</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Sustainability</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Careers</a></p>
+      </div>
+  
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; color: gray;">
+      <p>© 2025 StayEra.com™. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+    {% endblock %}
+
+
+    </body>
+    </html>

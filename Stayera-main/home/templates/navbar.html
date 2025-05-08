@@ -1,0 +1,34 @@
+{% load static %}
+{% block extra_css %}{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Shop Travel{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="{% static 'images/Stayera.png' %}" alt="Logo" class="logo">
+            <a href="{% url 'home' %}" class="brand">Shop Travel <i class="fas fa-caret-down"></i></a>
+        </div>
+        <ul class="navbar-right">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'form' %}">Hotels</a></li>
+            <li><a href="{% url 'form' %}"><i class="fas fa-globe"></i> Offers</a></li>
+            <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About Us</a></li>
+            <li><a href="#">Explore More</a></li>
+            <li><a href="{% url 'form' %}">Contact Us</a></li>
+            <li><a href="{% url 'form' %}">Register</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #aeaeae, #e4daee);
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-wrapper {
+            min-height: calc(100vh - 60px); /* adjust if navbar is taller */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            color: gold;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            position: absolute;
+            top: 10px;
+            left: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0 5px;
+            color: #333;
+            font-size: 14px;
+            pointer-events: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(232, 223, 223, 0.2);
+            color: black;
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        input:focus ~ .form-label,
+        input:not(:placeholder-shown) ~ .form-label,
+        select:focus ~ .form-label,
+        select:not(:placeholder-shown) ~ .form-label,
+        textarea:focus ~ .form-label,
+        textarea:not(:placeholder-shown) ~ .form-label {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .form-text {
+            font-size: 12px;
+            color: #dcdcdc;
+            margin-top: 4px;
+        }
+
+        .text-danger {
+            font-size: 13px;
+            color: gold;
+            margin-top: 4px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #ffd700, #edd33e);
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #e5990d, gold);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="container">
+            <h2>Edit Booking</h2>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field }}
+                    <label class="form-label">{{ field.label }}</label>
+                    {% if field.help_text %}
+                    <div class="form-text">{{ field.help_text }}</div>
+                    {% endif %}
+                    {% for error in field.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a href="{% url 'offers:admin_dashboard' %}" class="btn btn-secondary" style="display: block; text-align: center; margin-top: 10px;">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

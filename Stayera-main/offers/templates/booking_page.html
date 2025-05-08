@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary-orange: gold;
+  --light-orange: #fff6f2;
+  --blue: #008cff;
+  --green: #2e9e5b;
+  --text-dark: #333333;
+  --text-gray: #777777;
+  --light-gray: #f2f2f2;
+  --border-color: #e6e6e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Room Info Section */
+.room-info {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.room-info h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.room-info p {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 5px;
+}
+
+/* Price Summary Section */
+.price-summary {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.price-summary h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.price-summary ul {
+  list-style: none;
+}
+
+.price-summary li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.price-summary li:last-child {
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 15px;
+  border-bottom: none;
+}
+
+.price-summary li:nth-child(2) {
+  color: var(--green);
+}
+
+/* Guest Details Section */
+.guest-details {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+.guest-details form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.guest-details input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.guest-details input:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+}
+
+.guest-details input::placeholder {
+  color: var(--text-gray);
+}
+
+.guest-details button {
+  grid-column: span 2;
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.guest-details button:hover {
+  background-color: #e85c2c;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .guest-details form {
+    grid-template-columns: 1fr;
+  }
+  
+  .guest-details button {
+    grid-column: span 1;
+  }
+}
+
+/* Add Goibibo-like orange top bar */
+body::before {
+  content: "";
+  display: block;
+  height: 60px;
+  background-color: var(--primary-orange);
+  margin-bottom: 20px;
+}
+
+/* Add a fake logo */
+.container::before {
+  content: "Stayera";
+  display: block;
+  color: var(--primary-orange);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Add some styling for the discount text */
+.price-summary li:nth-child(2)::before {
+  content: "GODEAL applied";
+  font-size: 12px;
+  color: var(--green);
+  position: relative;
+  top: -5px;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Hotel Lotus Inn</h1>
+      <p>Check-in: Tue, 22 Apr 2025 | Check-out: Wed, 23 Apr 2025</p>
+    </header>
+    
+    <section class="room-info">
+      <h2>1 Room for 2 Adults</h2>
+      <p>Deluxe AC - Room Only - Free Cancellation</p>
+    </section>
+
+    <section class="price-summary">
+      <h2>Price Summary</h2>
+      <ul>
+        <li>Base Price: ₹1,900</li>
+        <li>Discount: -₹338</li>
+        <li>Price after Discount: ₹1,562</li>
+        <li>Taxes & Fees: ₹361</li>
+        <li><strong>Total Amount: ₹1,923</strong></li>
+      </ul>
+    </section>
+
+    <section class="guest-details">
+        <form method="POST" action="{% url 'offers:booking_page' %}">
+            {% csrf_token %}
+            
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Mobile Number" required>
+            <button type="submit">Book Now</button>
+          </form>
+    </section>
+  </div>
+
+</body>
+</html>

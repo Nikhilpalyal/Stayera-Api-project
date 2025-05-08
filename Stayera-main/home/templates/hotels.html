@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Shop Travel{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/hotels.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<header class="hero">
+    <h1 class="h1">Welcome to StayEra</h1>
+    <p class="p">The place where you're looking to stay, A home better than home</p>
+    <button class="explore-btn">Explore Now →</button>
+</header>
+
+<section class="booking-form">
+    <form>
+        <select>
+            <option>Select a room</option>
+            <option>Standard Room</option>
+            <option>Deluxe Room</option>
+            <option>Suite</option>
+        </select>
+        <input type="date" placeholder="Check-in">
+        <input type="date" placeholder="Check-out">
+        <input type="number" placeholder="Guests">
+        <button type="submit"><a href="{% url 'room' %}" style="text-decoration: none; color: inherit;">Book Now</a></button>
+    </form>
+</section>
+
+<section class="discover-stays">
+    <h1>Discover your new favorite stay</h1>
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <div class="card">
+                <img src="{% static 'images/scoll1.avif' %}" alt="All Inclusive">
+                <p>All inclusive</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/apartment.jpeg' %}" alt="Family Friendly">
+                <p>Family friendly</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/appartments.webp' %}" alt="Apartment">
+                <p>Apartment</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/hotel3.jpg' %}" alt="Spa">
+                <p>Spa</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/resort.jpeg' %}" alt="Villa">
+                <p>Villa</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/room.jpg' %}" alt="Rental rooms">
+                <p>Rental rooms</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2>Trending Destinations In India to visit</h2>
+    
+    <div class="destinations-container">
+        <div class="destination-card">
+            <img src="{% static 'images/newdelhi.jpeg' %}" alt="New Delhi">
+            <div class="destination-name">New Delhi</div>
+        </div>
+        
+        <div class="destination-card">
+            <img src="{% static 'images/bangalore.jpg' %}" alt="Bangalore">
+            <div class="destination-name">Bangalore</div>
+        </div>
+        
+        <div class="destination-card">
+            <a href="{% url 'room' %}">
+            <img src="{% static 'images/hyderabad.jpg' %}" alt="Mumbai">
+            <div class="destination-name">Mumbai</div>
+            </a>
+        </div>
+        
+        <div class="destination-card">
+            <img src="{% static 'images/chandigarh.jpg' %}" alt="Amritsar">
+            <div class="destination-name">Chandigarh</div>
+        </div>
+        
+        <div class="destination-card">
+            <img src="{% static 'images/mumbai.jpg' %}" alt="Hyderabad">
+            <div class="destination-name">Hyderabad</div>
+        </div>
+        
+        <div class="destination-card">
+            <img src="{% static 'images/varanasi.jpg' %}" alt="Jaipur">
+            <div class="destination-name">Varanasi</div>
+        </div>
+    </div>
+
+<div class="rewards-container">
+    <h2>Travel more, spend less</h2>
+    <div class="rewards-grid">
+        <div class="reward-card genius-card">
+            <h3>Genius</h3>
+            <p>You're at <strong>Genius Level 1</strong> in our loyalty programme</p>
+        </div>
+        <div class="reward-card">
+            <h3>10% discounts on stays <span class="icon">💰</span></h3>
+            <p>Enjoy discounts at participating properties worldwide</p>
+        </div>
+        <div class="reward-card">
+            <h3>10% off rental cars <span class="icon">🚗</span></h3>
+            <p>Save on select rental cars</p>
+        </div>
+        <div class="reward-card">
+            <h3>10-15% discounts on stays <span class="icon">🔒</span></h3>
+            <p>Complete 5 bookings to unlock Genius Level 2</p>
+        </div>
+    </div>
+</div>
+<footer style="background-color: #1c1c1c; padding: 40px 20px; color: white;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; max-width: 1200px; margin: auto;">
+      
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Support</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Coronavirus (COVID-19) FAQs</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Manage your trips</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Contact Customer Service</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Safety Resource Center</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Discover</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Genius loyalty program</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Seasonal and holiday deals</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Travel articles</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Booking.com for Business</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Terms and settings</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Privacy & cookies</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Terms & conditions</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Grievance officer</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Modern Slavery Statement</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">Partners</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">Login</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Partner help</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">List your property</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Become an affiliate</a></p>
+      </div>
+  
+      <div style="min-width: 180px; margin-bottom: 20px;">
+        <h4 style="font-weight: bold;">About</h4>
+        <p><a href="#" style="color: white; text-decoration: none;">About StayEra.com</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">How We Work</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Sustainability</a></p>
+        <p><a href="#" style="color: white; text-decoration: none;">Careers</a></p>
+      </div>
+  
+    </div>
+  
+    <div style="text-align: center; margin-top: 30px; color: gray;">
+      <p>© 2025 StayEra.com™. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+{% endblock %}
+</body>
+</html>
+
+
+
+
+<script src="{% static 'js/hotels.js' %}"></script>
+

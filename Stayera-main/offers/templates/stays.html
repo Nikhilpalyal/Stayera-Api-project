@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Stays | Shop Travel{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stays.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="breadcrumb">
+             <span>›</span> Where2Go <span>›</span> Top Stays In & Around Bangalore for a Weekend Getaway
+        </div>
+        <div class="hero-title">
+            Top Stays In & Around Bangalore for a Weekend Getaway
+        </div>
+        <div class="hero-desc">
+            Need a break from the daily drill? It is time to switch off and escape to these beautiful properties
+            located near the city. Here's a list especially curated for you. Just pick your favourite!
+        </div>
+        <div class="city-select">
+            Travelling from <span class="select-city">Select City ⬇️</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+          <img src="{% static 'images/bannergr.jpeg' %}" alt="Bannerghatta" />
+          <h2><span class="number">1</span> Bannerghatta Nature Camp by Jungle Lodges, Bannerghatta</h2>
+          <p class="tags">Tent & Cottages | Yoga Sessions | Tour to Butterfly Park</p>
+          <p>Sign up for a date with nature as you nest in peaceful environs! Try yoga, go for fun nature treks and enjoy to the hilt at this safari lodge.</p>
+          <button>Explore</button>
+        </div>
+      
+        <div class="card">
+          <img src="{% static 'images/windflower.jpeg' %}" alt="Windflower Jungle Resorts" />
+          <h2><span class="number">2</span> The Windflower Jungle Resorts & Spa, Bandipur</h2>
+          <p class="tags">Award-winning-Spa | Rustic-Cottages | Jungle-Safari</p>
+          <p>Discover the untamed side of nature at this Jungle resort. Stay in the rustic huts, take spa therapies and enjoy alfresco dining at the pristine location.</p>
+        
+          <!-- Updated Explore button with link -->
+          <a href="{% url 'offers:offer_list' %}" class="explore-btn">Explore</a>
+
+        </div>
+        
+      
+        <div class="card">
+        <img src="{% static 'images/serai.jpeg' %}" alt="Windflower Jungle Resorts" />
+          <h2><span class="number">3</span> The Serai Kabini, Kabini</h2>
+          <p class="tags">Spa | Jungle-Safari | Resto-&-Outpost-Bar</p>
+          <p>Unwind at this waterfront property, known for its tranquil ambience. You can also take a river cruise and enjoy delicacies at the multicuisine restaurant.</p>
+          <button>Explore</button>
+        </div>
+      </div>
+    </div>  
+
+    <div class="container-2">
+        <div class="card">
+          <img src="{% static 'images/tamara.jpeg' %}" alt="water" />
+          <h2><span class="number">4</span>The Tamara, Coorg</h2>
+          <p class="tags">Scenic Resort Amidst Coffee & Cardamom Plantations</p>
+          <p>he property at Tamara Coorg is praised for its breathtaking views, serene ambiance, and luxurious cottages. Guests appreciate the warm hospitality, delicious food, and variety of activities available.</p>
+          <button>Explore</button>
+        </div>
+      
+        <div class="card">
+          <img src="{% static 'images/windflower.jpeg' %}" alt="Windflower Jungle Resorts" />
+          <h2><span class="number">5</span> The Water wood lodges</h2>
+          <p class="tags">Award-winning-Spa | Rustic-Cottages | Jungle-Safari</p>
+          <p>Discover the untamed side of nature at this Jungle resort. Stay in the rustic huts, take spa therapies and enjoy alfresco dining at the pristine location.</p>
+          <button>Explore</button>
+        </div>
+      
+        <div class="card">
+        <img src="{% static 'images/resort.jpeg' %}" alt="Windflower Jungle Resorts" />
+          <h2><span class="number">3</span> The silent shores resort</h2>
+          <p class="tags">Spa | Jungle-Safari | Resto-&-Outpost-Bar</p>
+          <p>Unwind at this waterfront property, known for its tranquil ambience. You can also take a river cruise and enjoy delicacies at the multicuisine restaurant.</p>
+          <button>Explore</button>
+        </div>
+      </div>
+    </div>  
+    <div class="state-carousel-wrapper">
+        <h2 class="state-carousel-heading">Top States in India</h2>
+        <div class="state-carousel">
+          <div class="state-card">
+            <div class="state-badge">1</div>
+            <img src="{% static 'images/arunachal.jpeg' %}"  />
+            <p class="state-name">Arunachal Pradesh</p>
+          </div>
+      
+          <div class="state-card">
+            <div class="state-badge">2</div>
+            <img src="{% static 'images/Himachal.jpeg' %}" />
+            <p class="state-name">Himachal Pradesh</p>
+          </div>
+      
+          <div class="state-card">
+            <div class="state-badge">3</div>
+            <img src="{% static 'images/punj.jpeg' %}" />
+            <p class="state-name">Punjab</p>
+          </div>
+      
+          <div class="state-card">
+            <div class="state-badge">4</div>
+            <img src="{% static 'images/tamil.jpeg' %}" alt="Windflower Jungle Resorts" />
+            <p class="state-name">Tamil Nadu</p>
+          </div>
+      
+          <div class="state-card">
+            <div class="state-badge">5</div> 
+            <img src="{% static 'images/chennnai.jpg' %}" />
+            <p class="state-name">Madhya Pradesh</p>
+          </div>
+
+          <div class="state-card">
+            <div class="state-badge">7</div>
+            <img src="{% static 'images/mumbai.jpg' %}" />
+            <p class="state-name">Maharashtra</p>
+          </div>
+      
+          
+          <div class="state-card">
+            <div class="state-badge">8</div>
+            <img src="{% static 'images/gujarat.jpeg' %}" />
+            <p class="state-name">Gujarat</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hover-faq-section">
+        <h2 class="hover-faq-title">FAQs - Frequently Asked Questions</h2>
+      
+        <div class="hover-faq-item">
+          <div class="hover-faq-question">What kind of destinations can I choose for travelling?</div>
+          <div class="hover-faq-answer">You can choose from beaches, mountains, historical sites, cities, wildlife sanctuaries, and more depending on your interests.</div>
+        </div>
+      
+        <div class="hover-faq-item">
+          <div class="hover-faq-question">Can I opt for a budget-friendly holiday?</div>
+          <div class="hover-faq-answer">Absolutely! We offer customizable holiday packages for every budget, including affordable accommodations and transport.</div>
+        </div>
+      
+        <div class="hover-faq-item">
+          <div class="hover-faq-question">Which time of the year is best suited for booking a holiday?</div>
+          <div class="hover-faq-answer">It depends on the destination, but generally, off-seasons offer the best deals while peak seasons give you the best experience.</div>
+        </div>
+      
+        <div class="hover-faq-item">
+          <div class="hover-faq-question">What all will I get in a holiday idea?</div>
+          <div class="hover-faq-answer">Our holiday ideas include curated itineraries, accommodations, travel tips, and activity suggestions based on your preferences.</div>
+        </div>
+      </div>
+      
+      
+{% endblock %}

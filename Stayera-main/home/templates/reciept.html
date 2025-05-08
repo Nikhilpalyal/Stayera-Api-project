@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Receipt</title>
+    <link rel="stylesheet" href="{% static 'css/receipt.css' %}">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 40px; background: #f8f9fa; }
+        .receipt { background: #fff; padding: 30px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+        .details { margin-top: 20px; }
+        .details div { margin-bottom: 10px; }
+        button { padding: 10px 20px; margin-top: 20px; background-color: #22c55e; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="receipt" id="receipt">
+        <h2>Payment Receipt</h2>
+        <div class="details">
+            <div><strong>Email:</strong> {{ email }}</div>
+            <div><strong>Hotel:</strong> {{ hotel }}</div>
+            <div><strong>Plan:</strong> {{ plan }}</div>
+            <div><strong>Amount Paid:</strong> {{ amount }}</div>
+            <div><strong>Payment Method:</strong> {{ payment_method }}</div>
+            <div><strong>Date:</strong> {{ date }}</div>
+        </div>
+        <button onclick="printReceipt()">Download Receipt</button>
+    </div>
+
+    <script>
+        function printReceipt() {
+            var printContents = document.getElementById('receipt').innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>
+</html>

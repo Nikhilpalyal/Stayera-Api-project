@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h1 class="mb-4">Room Dashboard</h1>
+
+    <!-- Stat Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Rooms</h5>
+                    <p class="card-text fs-4">{{ Number }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Occupied Rooms</h5>
+                    <p class="card-text fs-4">{{ Is_occupied }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Available Rooms</h5>
+                    <p class="card-text fs-4">{{ Is_available }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Occupancy Rate</h5>
+                    <p class="card-text fs-4">{{ Occupancy_rate }}%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Room Table -->
+    <div class="card shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Room Details</h5>
+            <a href="{% url 'offers:add_room' %}" class="btn btn-success">+ Add Room</a>
+                </div>
+        <div class="card-body p-0">
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Room Number</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Occupied</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for room in room_details %}
+                    <tr>
+                        <td>{{ room.id }}</td>
+                        <td>{{ room.room_number }}</td>
+                        <td>{{ room.room_type }}</td>
+                        <td>₹{{ room.price }}</td>
+                        <td>
+                            {% if room.is_occupied %}
+                                <span class="badge bg-success">Yes</span>
+                            {% else %}
+                                <span class="badge bg-secondary">No</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'offers:edit_room' room.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+
+                            <form action="{% url 'offers:delete_room' room.id %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                         </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
